@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Server.MirEnvir
 {
+    //邮件信息
     public class MailInfo
     {
         public ulong MailID;

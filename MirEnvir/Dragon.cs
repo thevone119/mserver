@@ -7,6 +7,7 @@ using Server.MirObjects.Monsters;
 
 namespace Server.MirEnvir
 {
+    //这个是龙么？
     public class Dragon
     {
         private int ProcessDelay = 2000;

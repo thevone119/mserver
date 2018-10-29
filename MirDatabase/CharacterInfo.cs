@@ -8,7 +8,7 @@ using Server.MirObjects;
 using System.Windows.Forms;
 
 namespace Server.MirDatabase
-{
+{   //角色信息
     public class CharacterInfo
     {
         public int Index;
@@ -196,10 +196,11 @@ namespace Server.MirDatabase
             count = reader.ReadInt32();
             for (int i = 0; i < count; i++)
             {
-                UserMagic magic = new UserMagic(reader);
+                UserMagic magic = new UserMagic(1,reader);
                 if (magic.Info == null) continue;
-                Magics.Add(magic);
+                //Magics.Add(magic);
             }
+            Magics = UserMagic.loadByUserid(Index);
             //reset all magic cooldowns on char loading < stops ppl from having none working skills after a server crash
             for (int i = 0; i < Magics.Count; i++)
             {
@@ -435,7 +436,13 @@ namespace Server.MirDatabase
 
             writer.Write(Magics.Count);
             for (int i = 0; i < Magics.Count; i++)
+            {
                 Magics[i].Save(writer);
+
+                Magics[i].userid = Index;
+                Magics[i].SaveDB();
+            }
+                
 
             writer.Write(Thrusting);
             writer.Write(HalfMoon);
@@ -563,7 +570,7 @@ namespace Server.MirDatabase
             return Inventory.Length;
         }
     }
-
+    //宠物
     public class PetInfo
     {
         public int MonsterIndex;
@@ -600,7 +607,7 @@ namespace Server.MirDatabase
             writer.Write(MaxPetLevel);
         }
     }
-
+    //坐骑
     public class MountInfo
     {
         public PlayerObject Player;
@@ -649,7 +656,7 @@ namespace Server.MirDatabase
             Player = ob;
         }
     }
-
+    //好友
     public class FriendInfo
     {
         public int Index;

@@ -7,6 +7,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 智能生物？
+    /// </summary>
     public class IntelligentCreatureObject : MonsterObject
     {
         public bool Summoned;

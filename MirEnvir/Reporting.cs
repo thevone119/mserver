@@ -10,6 +10,7 @@ using Server.MirDatabase;
 
 namespace Server.MirEnvir
 {
+    //报告，是错误报告存储吧？不是哦，是记录日志，我靠
     public class Reporting
     {
         public PlayerObject Player;

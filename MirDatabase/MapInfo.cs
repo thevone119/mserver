@@ -7,27 +7,41 @@ using Server.MirEnvir;
 
 namespace Server.MirDatabase
 {
+    /// <summary>
+    /// 地图信息
+    /// </summary>
     public class MapInfo
     {
+        //索引
         public int Index;
+        //文件名，地图名
         public string FileName = string.Empty, Title = string.Empty;
+        //小地图，大地图，地图背景音乐
         public ushort MiniMap, BigMap, Music;
+        //灯光
         public LightSetting Light;
+        //
         public byte MapDarkLight = 0, MineIndex = 0;
 
+        //各种属性配置，是否随机，是否传送，是否可以PK，是否掉落物品，是否可骑马等
         public bool NoTeleport, NoReconnect, NoRandom, NoEscape, NoRecall, NoDrug, NoPosition, NoFight,
             NoThrowItem, NoDropPlayer, NoDropMonster, NoNames, NoMount, NeedBridle, Fight, NeedHole, Fire, Lightning;
 
         public string NoReconnectMap = string.Empty;
         public int FireDamage, LightningDamage;
-
+        //安全区域
         public List<SafeZoneInfo> SafeZones = new List<SafeZoneInfo>();
+        //这个是传送门么？
         public List<MovementInfo> Movements = new List<MovementInfo>();
+        //重生信息，是怪物重生吧
         public List<RespawnInfo> Respawns = new List<RespawnInfo>();
+        //NPC
         public List<NPCInfo> NPCs = new List<NPCInfo>();
+        //挖矿区域
         public List<MineZone> MineZones = new List<MineZone>();
+        //活动的坐标？
         public List<Point> ActiveCoords = new List<Point>();
-
+        //实例包裹
         public InstanceInfo Instance;
 
         public MapInfo()

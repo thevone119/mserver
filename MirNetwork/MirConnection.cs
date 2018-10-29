@@ -862,11 +862,12 @@ namespace Server.MirNetwork
             Player.StartGame();
         }
 
+        //小退
         public void LogOut()
         {
             if (Stage != GameStage.Game) return;
 
-            if (SMain.Envir.Time < Player.LogTime)
+            if (ServerConfig.exitGameType == ExitGameType.Normal&&SMain.Envir.Time < Player.LogTime)
             {
                 Enqueue(new S.LogOutFailed());
                 return;

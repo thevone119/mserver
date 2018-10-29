@@ -9,6 +9,7 @@ using C = ClientPackets;
 
 namespace Server.MirDatabase
 {
+    //账号信息
     public class AccountInfo
     {
         public int Index;

@@ -8,6 +8,9 @@ using Server.MirEnvir;
 
 namespace Server.MirDatabase
 {
+    /// <summary>
+    /// NPC信息
+    /// </summary>
     public class NPCInfo
     {
         public int Index;

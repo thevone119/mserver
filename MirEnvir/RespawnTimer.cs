@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Server.MirEnvir
 {
+    //关于各种重生的
     public class RespawnSave
     {
         public bool Spawned = false;

@@ -9,6 +9,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 怪物对象
+    /// </summary>
     public class MonsterObject : MapObject
     {
         public static MonsterObject GetMonster(MonsterInfo info)

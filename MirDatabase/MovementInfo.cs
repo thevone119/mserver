@@ -8,6 +8,10 @@ using Server.MirEnvir;
 
 namespace Server.MirDatabase
 {
+    /// <summary>
+    /// 这个是传送洞么？
+    /// 后面要开放一个传送门的功能
+    /// </summary>
     public class MovementInfo
     {
         public int MapIndex;

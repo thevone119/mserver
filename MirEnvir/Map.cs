@@ -9,6 +9,7 @@ using S = ServerPackets;
 
 namespace Server.MirEnvir
 {
+    //地图数据全部在这里啊。
     public class Map
     {
         private static Envir Envir

@@ -10,13 +10,16 @@ using System.Linq;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 地图对象的抽象类，包括地图上的怪物，地图上的掉落物品，地图上的魔法？
+    /// </summary>
     public abstract class MapObject
     {
         protected static Envir Envir
         {
             get { return SMain.Envir; }
         }
-
+        //这个只是临时的ID吧。
         public readonly uint ObjectID = SMain.Envir.ObjectID;
 
         public abstract ObjectType Race { get; }

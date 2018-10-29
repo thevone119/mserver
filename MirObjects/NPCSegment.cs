@@ -12,6 +12,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// NPC脚本
+    /// </summary>
     public class NPCSegment
     {
         public NPCPage Page;

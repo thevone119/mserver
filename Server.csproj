@@ -79,6 +79,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Components\SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="..\Common.cs">
       <Link>Common.cs</Link>
+    </Compile>
+    <Compile Include="..\Common2.cs">
+      <Link>Common2.cs</Link>
     </Compile>
     <Compile Include="..\ServerPackets.cs">
       <Link>MirNetwork\ServerPackets.cs</Link>
@@ -509,6 +515,12 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MirMVC\control\" />
+    <Folder Include="MirMVC\dao\" />
+    <Folder Include="MirMVC\model\" />
+    <Folder Include="MirMVC\test\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

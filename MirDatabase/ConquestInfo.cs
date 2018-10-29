@@ -5,7 +5,10 @@ using System.Drawing;
 using System.IO;
 
 namespace Server.MirDatabase
-{
+{   
+    /// <summary>
+    /// 占领》？是行会占领么？
+    /// </summary>
     public class ConquestInfo
     {
         public int Index;

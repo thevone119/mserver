@@ -8,6 +8,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SpellObject : MapObject
     {
         public override ObjectType Race

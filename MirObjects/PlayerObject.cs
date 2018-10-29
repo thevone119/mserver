@@ -14,6 +14,9 @@ using Server.MirObjects.Monsters;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 玩家
+    /// </summary>
     public sealed class PlayerObject : MapObject
     {
         public string GMPassword = Settings.GMPassword;

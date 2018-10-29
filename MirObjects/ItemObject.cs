@@ -9,6 +9,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// 物品？包括各种掉落物品？
+    /// </summary>
     public sealed class ItemObject : MapObject
     {
         public override ObjectType Race
@@ -56,28 +59,18 @@ namespace Server.MirObjects
 
         public ItemObject(MapObject dropper, UserItem item, bool DeathDrop = false)
         {
+            Item = item;
+
             if (DeathDrop)//player dropped it when he died: allow for time to run back and pickup his drops
                 ExpireTime = Envir.Time + Settings.PlayerDiedItemTimeOut * Settings.Minute;
             else
                 ExpireTime = Envir.Time + Settings.ItemTimeOut * Settings.Minute;
-
-            Item = item;
-
             if (Item.IsAdded)
                 NameColour = Color.Cyan;
 			else
 			{
-				if (item.Info.Grade == ItemGrade.None)
-					NameColour = Color.White;
-				if (item.Info.Grade == ItemGrade.Common)
-					NameColour = Color.White;
-				if (item.Info.Grade == ItemGrade.Rare)
-					NameColour = Color.DeepSkyBlue;
-				if (item.Info.Grade == ItemGrade.Legendary)
-					NameColour = Color.DarkOrange;
-				if (item.Info.Grade == ItemGrade.Mythical)
-					NameColour = Color.Plum;
-			}
+                NameColour = Item.Info.getNameColor(true);
+            }
 
 			CurrentMap = dropper.CurrentMap;
             CurrentLocation = dropper.CurrentLocation;

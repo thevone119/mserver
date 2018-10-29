@@ -8,12 +8,16 @@ using System.Windows.Forms;
 
 namespace Server.MirDatabase
 {
+    //安全区域
     public class SafeZoneInfo
     {
+        //安全区位置
         public Point Location;
+        //大小
         public ushort Size;
+        //是否开始坐标（这个应该没什么用？应该记录是否回城位置）
         public bool StartPoint;
-
+        //地图引用
         public MapInfo Info;
 
         public SafeZoneInfo()

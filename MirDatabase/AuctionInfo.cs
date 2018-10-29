@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Server.MirDatabase
-{
+{   ///物品拍卖
     public class AuctionInfo
     {
         public ulong AuctionID; 

@@ -10,6 +10,7 @@ using Server.MirObjects.Monsters;
 
 namespace Server.MirObjects
 {
+    //这个是攻城战争？
     public class ConquestObject
     {
         protected static Envir Envir

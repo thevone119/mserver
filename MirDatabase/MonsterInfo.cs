@@ -8,28 +8,41 @@ using Server.MirEnvir;
 
 namespace Server.MirDatabase
 {
-    //怪物信息
+    /// <summary>
+    /// 怪物数据，这个可能要大改？
+    /// 1.不用每个怪物写一个类吧？
+    /// 2.怪物数据在服务器，每种怪物应该只有一个副本，其他的都只是记录ID，位置，血量几个核心的信息而已。
+    /// 3.怪物刷新等逻辑
+    /// 各种属性,其实没必要那么多？先不考虑人物怪，人物怪当中人物进行处理的，因为客户端可以看到人物怪的装备的
+    /// </summary>
     public class MonsterInfo
-    {
+    {   
         public int Index;
         public string Name = string.Empty;
-
         public Monster Image;
+        //
         public byte AI, Effect, ViewRange = 7, CoolEye;
+        //等级，这个主要作用是等级高的不允许被推动的哦
         public ushort Level;
 
         public uint HP;
+
+        //准确，敏捷，光
         public byte Accuracy, Agility, Light;
+        //攻击，魔法，道术等
         public ushort MinAC, MaxAC, MinMAC, MaxMAC, MinDC, MaxDC, MinMC, MaxMC, MinSC, MaxSC;
-
+        //攻击速度，移动速度
         public ushort AttackSpeed = 2500, MoveSpeed = 1800;
+        //经验
         public uint Experience;
-        
+        //怪物的掉落物品
         public List<DropInfo> Drops = new List<DropInfo>();
-
+        //驯服，推动，自动走动？不死系？
         public bool CanTame = true, CanPush = true, AutoRev = true, Undead = false;
 
+        //是否有重生脚本(比如重生提醒？)
         public bool HasSpawnScript;
+        //是否有死亡脚本(比如死亡出发任务？)
         public bool HasDieScript;
 
         public MonsterInfo()
@@ -152,6 +165,7 @@ namespace Server.MirDatabase
             writer.Write(Undead);
         }
 
+        //加载怪物的掉落物品数据
         public void LoadDrops()
         {
             Drops.Clear();
@@ -272,6 +286,7 @@ namespace Server.MirDatabase
 
     }
 
+    //掉落物品几率配置
     public class DropInfo
     {
         public int Chance;//机会
@@ -279,7 +294,7 @@ namespace Server.MirDatabase
         public uint Gold;//黄金
 
         public byte Type;//类型
-        public bool QuestRequired;//需要的？
+        public bool QuestRequired;//需要的？掉落要求么?
 
         public static DropInfo FromLine(string s)
         {

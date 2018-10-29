@@ -13,6 +13,9 @@ using S = ServerPackets;
 
 namespace Server.MirObjects
 {
+    /// <summary>
+    /// NPC对象
+    /// </summary>
     public sealed class NPCObject : MapObject
     {
 
@@ -1557,6 +1560,9 @@ namespace Server.MirObjects
                 Params.Add(p[i]);
         }
     }
+    /// <summary>
+    /// npc的命令执行
+    /// </summary>
     public class NPCActions
     {
         public ActionType Type;
